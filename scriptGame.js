@@ -201,7 +201,9 @@ window.addEventListener("keydown", (e) => {
 
     /* Validacion si el usuario gana */
     if (countTrueLetters == largeArray) {
-        alert("Felicitaciones! Ganaste!");
-        location.reload();
+        setTimeout(() => {
+            alert("Felicitaciones! Ganaste!");
+            location.reload();
+        }, 2000);
     }
 })
