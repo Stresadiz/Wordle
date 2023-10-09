@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(32, 31, 31);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    gap: 2em;
+}
+
+.game{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    gap: 1em;
+}
+
+.row{
+    display: flex;
+    gap: 0.5em;
+}
+
+.box{
+    padding: 0.5em 0em 0.4em 1em;
+    border: 1px solid rgb(73, 70, 70);
+    border-radius: 0.5em;
+    height: 1.5em;
+    width: 1.5em;
+    cursor: text;
+    font-size: 1.5em;
+}
+
+.box--true{
+    background-color: green;
+    transition: background-color 1.5s;
+}
+
+.box--mid{
+    background-color: orange;
+    transition: background-color 1.5s;
+}
+
+.box--none{
+    background-color: rgb(49, 49, 49);
+    transition: background-color 1s;
+}
+
+.letters{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.letters__row{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.letter{
+    border: 1px solid rgb(73, 70, 70);
+    padding: 0.4em 0.8em;
+    border-radius: 30%;
+}
