@@ -1,7 +1,7 @@
 // Función para obtener una palabra aleatoria del array
 function obtenerPalabraAleatoria() {
     const indiceAleatorio = Math.floor(Math.random() * words.length);
-    if (words[indiceAleatorio].length >= 4) {
+    if (words[indiceAleatorio].length >= 4 && words[indiceAleatorio].length <= 7) {
         return words[indiceAleatorio];
     } else {
         return obtenerPalabraAleatoria()
