@@ -83,7 +83,7 @@ main{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 500px){
 
     main{
         max-width: 100vw;
