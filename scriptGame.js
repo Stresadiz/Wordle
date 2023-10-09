@@ -1,78 +1,22 @@
-let words = [
-    "hola", "manzana", "perro", "gato", "casa", 
-    "amarillo", "azul", "verde", "rojo", "naranja",
-    "coche", "bicicleta", "computadora", "telefono", 
-    "agua", "leche", "libro", "futbol", "guitarra", 
-    "sol", "luna", "amor", "amistad", "viaje", "aventura", 
-    "diversion", "baile", "cine", "musica", "reir", 
-    "llorar", "sonar", "tiempo", "naturaleza", "ciudad", 
-    "salud", "vida", "muerte", "familia", "trabajo", 
-    "dinero", "educacion", "escuela", "universidad", 
-    "arte", "cultura", "historia", "ciencia", "tecnologia", 
-    "internet", "espacio", "planeta", "mar", "montana", 
-    "bosque", "playa", "rio", "cielo", "fuego", "aire", 
-    "tierra", "animal", "planta", "piedra", "metal", "fruta", 
-    "verdura", "carne", "pescado", "mariposa", "abeja", 
-    "flor", "hoja", "raiz", "soltero", "casado", 
-    "divorciado", "viudo", "soltera", "joven", "adulto", 
-    "anciano", "niño", "niña", "hermano", "hermana", "padre", 
-    "madre", "abuelo", "abuela", "amigo", "amiga", "vecino", 
-    "vecina", "profesor", "profesora", "estudiante", "alumno", 
-    "alumna", "doctor", "enfermera", "abogado", "ingeniero", 
-    "policia", "bombero", "artista", "escritor", "poeta", "actor", 
-    "actriz", "director", "presidente", "gobierno", "pais", 
-    "ciudadano", "democracia", "derechos", "deberes", "justicia", 
-    "paz", "guerra", "conflicto", "crisis", "problema", 
-    "solucion", "exito", "fracaso", "sueno", "pesadilla", 
-    "esperanza", "desesperacion", "alegria", "tristeza", 
-    "felicidad", "miedo", "coraje", "amoroso", "odioso", 
-    "valiente", "cobarde", "inteligente", "tonto", "rico", 
-    "pobre", "alto", "bajo", "fuerte", "debil", "rapido", 
-    "lento", "bueno", "malo", "bonito", "feo", "caliente", 
-    "frio", "duro", "suave", "limpio", "sucio", "joven", "viejo", 
-    "feliz", "triste", "enojado", "cansado", "sorprendido", 
-    "asustado", "contento", "orgulloso", "humilde", "honesto", 
-    "mentiroso", "amable", "grosero", "generoso", "egoista", 
-    "puntual", "impuntual", "simpatico", "antipatico", 
-    "amigable", "solitario", "activo", "perezoso", "divertido", 
-    "aburrido", "serio", "gracioso", "complicado", "sencillo", 
-    "interesante", "aburrido", "educado", "grosero", "habil", 
-    "torpe", "tranquilo", "nervioso", "amoroso", "despistado", 
-    "ordenado", "desordenado", "intenso", "relajado", "valioso", 
-    "insignificante", "nuevo", "viejo", "fresco", "estado", "rico", 
-    "pobre", "fuerte", "debil", "salado", "dulce", "agrio", 
-    "amargo", "picante", "frio", "caliente", "delicioso", 
-    "asqueroso", "bien", "mal", "arriba", "abajo", "adentro", 
-    "afuera", "cerca", "lejos", "derecha", "izquierda", 
-    "ancho", "estrecho", "pesado", "ligero", "alto", "bajo", 
-    "lleno", "vacio", "largo", "corto", "claro", "oscuro", "ruidoso", 
-    "silencioso", "abierto", "cerrado", "grande", 
-    "largo", "corto", "caro", "barato", "moderno", "antiguo", 
-    "duro", "suave", "interior", "exterior", "superior", "inferior", 
-    "principal", "secundario", "profundo", "superficial", "rico", 
-    "pobre", "amplio", "estrecho", "largo", "corto", "claro", 
-    "oscuro", "ruidoso", "silencioso", "abierto", "cerrado", 
-    "grande", "pequeño", "largo", "corto", "caro", "barato", 
-    "moderno", "antiguo", "duro", "suave", "interior", "exterior", 
-    "superior", "inferior", "principal", "secundario", "profundo", 
-    "superficial", "rico", "pobre", "amplio", "estrecho", 
-    "largo", "corto", "claro", "oscuro", "ruidoso", "silencioso", 
-    "abierto", "cerrado", "grande", "pequeño"
-]
-
 // Función para obtener una palabra aleatoria del array
 function obtenerPalabraAleatoria() {
     const indiceAleatorio = Math.floor(Math.random() * words.length);
-    return words[indiceAleatorio];
+    if (words[indiceAleatorio].length >= 4) {
+        return words[indiceAleatorio];
+    } else {
+        return obtenerPalabraAleatoria()
+    }
 }
 
 // Obtener una palabra aleatoria
 let palabraAleatoria = obtenerPalabraAleatoria();
 
+console.log(palabraAleatoria);
+
 // Separar la palabra en caracteres y guardarla en el array wordToFind
 let wordToFind = palabraAleatoria.toUpperCase().split('');
 
-let validLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+let validLetters = ["á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let actualWord = []
 let lastIndex = 0;
 let rowActual = 0;
@@ -96,7 +40,54 @@ let boxes = document.querySelectorAll(".box");
 
 //Validacion de letras que se clickean
 window.addEventListener("keydown", (e) => {
+    detectLetterClicked(e);
+})
 
+/* Funcionamiento de cada boton */
+let buttons = document.querySelectorAll(".letter");
+
+buttons.forEach((btn, index) => {
+    btn.addEventListener("click", (e)=>{
+        let letter = btn.getAttribute('value');
+
+        simulateKeyPress(letter)
+    })
+});
+
+/* Funcion de simular el evento click */
+function simulateKeyPress(key) {
+
+    let eventSimulate;
+
+    /* Validamos que letra se presiona en los botones */
+    function eventSimulateFunc(key) {
+        keyCode = key.charCodeAt(0);
+
+        if (key == 'Backspace') {
+            keyCode = 8
+        } else if (key == 'Enter') {
+            keyCode = 13
+        }
+
+        /* Asignamos los datos de la key */
+        eventSimulate = new KeyboardEvent('keydown', {
+            key: key,
+            keyCode: keyCode,
+            which: keyCode
+        });
+        
+    }
+
+    eventSimulateFunc(key)
+
+    detectLetterClicked(eventSimulate);
+}
+
+/* Funcion para validar la letra ya sea por teclado o por pantalla */
+function detectLetterClicked(e) {
+
+    let countTrueLetters;
+    
     //Validamos que sean letras mayusculas o minusculas
     if (validLetters.includes(e.key)) {
 
@@ -116,7 +107,7 @@ window.addEventListener("keydown", (e) => {
 
         if (lastIndex-1 >= detectFinalRow) {
 
-            let countTrueLetters = 0;
+            countTrueLetters = 0;
 
             /* Validar similitudes */
             actualWord.forEach((letter, index) => {
@@ -206,4 +197,4 @@ window.addEventListener("keydown", (e) => {
             location.reload();
         }, 2000);
     }
-})
+}

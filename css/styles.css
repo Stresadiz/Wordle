@@ -7,6 +7,8 @@ body{
     background-color: rgb(32, 31, 31);
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none; 
+    -webkit-user-select:none;
 }
 
 main{
@@ -70,7 +72,13 @@ main{
 }
 
 .letter{
-    border: 1px solid rgb(73, 70, 70);
+    border: 1px solid rgb(63, 61, 61);
     padding: 0.4em 0.8em;
     border-radius: 30%;
+}
+
+.letter:hover{
+    border: 1px solid rgb(255, 255, 255);
+    transition: border 1s;
+    cursor: pointer;
 }
