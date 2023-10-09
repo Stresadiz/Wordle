@@ -162,11 +162,7 @@ window.addEventListener("keydown", (e) => {
                         }
                 }
 
-                /* Validacion si el usuario gana */
-                if (countTrueLetters == largeArray) {
-                    alert("Felicitaciones! Ganaste!");
-                    location.reload();
-                }
+
             });
 
             /* Reseteamos el array y aumentamos la fila */
@@ -201,5 +197,11 @@ window.addEventListener("keydown", (e) => {
             location.reload()
         }, 2000);
         
+    }
+
+    /* Validacion si el usuario gana */
+    if (countTrueLetters == largeArray) {
+        alert("Felicitaciones! Ganaste!");
+        location.reload();
     }
 })
