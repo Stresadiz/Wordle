@@ -11,12 +11,25 @@ function obtenerPalabraAleatoria() {
 // Obtener una palabra aleatoria
 let palabraAleatoria = obtenerPalabraAleatoria();
 
-console.log(palabraAleatoria);
-
 // Separar la palabra en caracteres y guardarla en el array wordToFind
 let wordToFind = palabraAleatoria.toUpperCase().split('');
 
-let validLetters = ["á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+/* Cambiar aquellas palabras que tienen tilde */
+wordToFind.forEach((index, i) => {
+    if (index == "Á") {
+        wordToFind[i] = "A"
+    } else if (index == "É") {
+        wordToFind[i] = "E"
+    } else if (index == "Í") {
+        wordToFind[i] = "I"
+    } else if (index == "Ó") {
+        wordToFind[i] = "O"
+    } else if (index == "Ú") {
+        wordToFind[i] = "U"
+    }
+});
+
+let validLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let actualWord = []
 let lastIndex = 0;
 let rowActual = 0;
