@@ -202,14 +202,5 @@ window.addEventListener("keydown", (e) => {
         }, 2000);
         
     }
-
-    /* Indicamos en que box estamso escribiendo */
-    if (lastIndex < rows.length) {
-        console.log(lastIndex);
-        let detectFinalRow = rowActual*largeArray
-        setInterval(() => {
-            boxes[lastIndex+detectFinalRow].style.border = "1px solid red"
-        }, 500);
-    }
 })
 
