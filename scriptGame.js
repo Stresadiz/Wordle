@@ -29,7 +29,6 @@ wordToFind.forEach((index, i) => {
     }
 });
 
-let validLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let actualWord = []
 let lastIndex = 0;
 let rowActual = 0;
@@ -156,6 +155,7 @@ function detectLetterClicked(e) {
                 } else {
                     /* Le damos un estilo dafult si no coincide ninguna letra */
                         boxes[detectFinalRow+index].classList.add("box--none");
+                        rows[rowActual].classList.add("shake")
 
                         /* Validamos el teclado y que letras se usaron */
                         for (let i = 0; i < lettersBoxes.length; i++) {
@@ -194,10 +194,10 @@ function detectLetterClicked(e) {
     }
 
     /* Validamos si el usuario perdio */
-    if (lastIndex >= rows.length && rowActual > 4) {
+    if (lastIndex >= rows.length && rowActual > rows.length-1 && countTrueLetters != largeArray) {
 
         setTimeout(() => {
-            alert("Lo sentimos, has perdido!");
+            alert(`Lo sentimos, has perdido!, la palabra era "${palabraAleatoria}"`);
             location.reload()
         }, 2000);
         

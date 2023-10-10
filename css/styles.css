@@ -24,7 +24,7 @@ main{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: 1em;
+    padding: 0em 4em;
     gap: 1em;
 }
 
@@ -33,10 +33,31 @@ main{
     gap: 0.5em;
 }
 
+.shake{
+    animation: Shake 0.5s;
+}
+
+@keyframes Shake {
+    0%{
+        padding: 0em 2em 0em 0em;
+    }
+    20%{
+        padding: 0em 0em 0em 2em;
+    }
+    60%{
+        padding: 0em 2em 0em 0em;
+    }
+    80%{
+        padding: 0em 0em 0em 2em;
+    }
+    100%{
+        padding: 0em 0em 0em 0em;
+    }
+}
 .box{
-    padding: 0.5em 0em 0.4em 1em;
+    padding: 0.5em 0.2em 0.4em 0.9em;
     border: 1px solid rgb(73, 70, 70);
-    border-radius: 0.5em;
+    border-radius: 15%;
     height: 1.5em;
     width: 1.5em;
     cursor: text;
@@ -74,7 +95,7 @@ main{
 .letter{
     border: 1px solid rgb(63, 61, 61);
     padding: 0.4em 0.8em;
-    border-radius: 30%;
+    border-radius: 15%;
 }
 
 .letter:hover{
@@ -107,7 +128,7 @@ main{
         width: 2em;
         height: 2em;
         padding: 0.5em 0.2em 0.3em 0.2em;
-        font-size: 0.7em;
+        font-size: 1em;
         text-align: center;
     }
 
